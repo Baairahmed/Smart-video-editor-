@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ایڈمن پینل - لاگ ان</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Noto Nastaliq Urdu', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box, .panel-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box" id="login-box">
+    <h2>🔐 ایڈمن لاگ اِن</h2>
+    <input type="text" id="username" placeholder="یوزر نیم">
+    <input type="password" id="password" placeholder="پاسورڈ">
+    <br>
+    <button onclick="login()">لاگ ان کریں</button>
+</div>
+
+<div class="panel-box hidden" id="admin-panel">
+    <h2>🎉 خوش آمدید ایڈمن!</h2>
+    <p>یہ آپ کا محفوظ ایڈمن پینل ہے۔</p>
+    <ul style="text-align: right;">
+        <li>ٹیمپلیٹس شامل کریں یا ہٹائیں</li>
+        <li>ویڈیو ایفیکٹس کنٹرول کریں</li>
+        <li>سبسکرپشن یوزرز کی فہرست دیکھیں</li>
+    </ul>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username === "admin" && password === "basir@2025") {
+            document.getElementById("login-box").classList.add("hidden");
+            document.getElementById("admin-panel").classList.remove("hidden");
+        } else {
+            alert("غلط یوزر نیم یا پاسورڈ!");
+        }
+    }
+</script>
+
+</body>
+</html>
